@@ -1,0 +1,69 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom_modal__wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0,0,0,0.7);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.custom_modal__wrap.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.custom_modal__wrap .custom_modal__container {
+  background: #fff;
+  margin: 1em;
+  z-index: 100;
+  border-radius: 10px;
+  box-shadow: 0 0 5px black;
+}
+
+.custom_modal__wrap .custom_modal__container .custom_modal__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 15px 0 15px;
+}
+
+.custom_modal__wrap .custom_modal__container .custom_modal__header .custom_modal__close {
+  border: 0;
+  background: #dc3545;
+  font-size: 32px;
+  color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 3px black;
+}
+
+.custom_modal__wrap .custom_modal__container .custom_modal__content {
+  text-align: justify;
+  margin: 15px;
+  max-height: 120px;
+  overflow: scroll;
+  overflow-y: auto;
+  overflow-x: auto;
+}
+
+.custom_modal__wrap .custom_modal__container .custom_modal__footer p {
+  margin-bottom: 0;
+  padding: 15px;
+  background: #343a40;
+  color: white;
+  text-align: end;
+}
