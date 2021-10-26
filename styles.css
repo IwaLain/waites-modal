@@ -45,7 +45,11 @@ body {
 .custom_modal__wrap .custom_modal__container .custom_modal__header .custom_modal__close {
   border: 0;
   background: #dc3545;
-  font-size: 32px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 28px;
+  padding: 0 11px;
   color: white;
   border-radius: 5px;
   box-shadow: 0 0 3px black;
@@ -54,6 +58,7 @@ body {
 .custom_modal__wrap .custom_modal__container .custom_modal__content {
   text-align: justify;
   margin: 15px;
+  padding-right: 10px;
   max-height: 120px;
   overflow: scroll;
   overflow-y: auto;
