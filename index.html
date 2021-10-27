@@ -17,14 +17,45 @@
                 <a class="custom_modal__close">&times;</a>
             </div>
             <div class="custom_modal__content">
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam harum, ab quae quas nisi corporis iusto. Quas, error ullam. Repudiandae at rerum quis aliquam sit natus cumque alias totam maxime? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet eveniet molestiae numquam corporis blanditiis animi porro nulla quae? Magni, ducimus. Fugiat voluptate et quaerat adipisci quae laboriosam consectetur quisquam ullam!</p>
+                <form id="form">
+                    <div class="form-group row mb-2">
+                        <label for="firstName" class="col-sm-4 col-form-label">First Name</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="firstName" required>
+                        </div>
+                    </div>
+                    <div class="form-group row mb-2">
+                        <label for="lastName" class="col-sm-4 col-form-label">Last Name</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="lastName" required>
+                        </div>
+                    </div>
+                    <div class="form-group row mb-2">
+                        <label for="email" class="col-sm-4 col-form-label">Email</label>
+                        <div class="col-sm-8">
+                            <input type="text" readonly class="form-control-plaintext" id="email" required>
+                        </div>
+                    </div>
+                    <div class="form-group row mb-2">
+                        <label for="phone" class="col-sm-4 col-form-label">Phone</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="phone" required>
+                        </div>
+                    </div>
+                </form>
+                <button type="submit" form="form" class="btn btn-primary form-btn" id="saveBtn">Save</button>
             </div>
             <div class="custom_modal__footer">
                 <p>footer info</p>
             </div>
         </div>
     </div>
+    <div class="alert">Jopa</div>
 
-    <script src="js/main.js"></script>
+    <script src="js/modal.js"></script>
+    <script type="module" src="methods/ajaxGet.js"></script>
+    <script type="module" src="methods/ajaxPatch.js"></script>
+    <script type="module" src="methods/showAlert.js"></script>
+    <script type="module" src="js/main.js"></script>
 </body>
 </html>

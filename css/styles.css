@@ -24,7 +24,6 @@ body {
 
 .custom_modal__wrap.visible {
   opacity: 1;
-  visibility: visible;
 }
 
 .custom_modal__wrap .custom_modal__container {
@@ -56,13 +55,14 @@ body {
 }
 
 .custom_modal__wrap .custom_modal__container .custom_modal__content {
-  text-align: justify;
   margin: 15px;
-  padding-right: 10px;
-  max-height: 120px;
+}
+
+.custom_modal__wrap .custom_modal__container .custom_modal__content form {
+  padding-right: 15px;
   overflow: scroll;
-  overflow-y: auto;
   overflow-x: auto;
+  overflow-y: auto;
 }
 
 .custom_modal__wrap .custom_modal__container .custom_modal__footer p {
@@ -71,4 +71,30 @@ body {
   background: #343a40;
   color: white;
   text-align: end;
+}
+
+.alert {
+  position: absolute;
+  bottom: 0;
+  right: 10px;
+  z-index: 200;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.alert.visible {
+  opacity: 1;
+}
+
+@media (max-height: 760px) {
+.form-btn {
+  width: 100%;
+}
+}
+
+@media (max-height: 320px) {
+.custom_modal__wrap .custom_modal__container .custom_modal__content form {
+  max-height: 100px;
+}
 }

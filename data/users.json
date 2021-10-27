@@ -1,0 +1,18 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "firstName": "Andrey",
+      "lastName": "Fedorov",
+      "phone": "+380666223336",
+      "email": "iwalain@gmail.com"
+    },
+    {
+      "id": 2,
+      "firstName": "Artem",
+      "lastName": "Moroz",
+      "phone": "+380953468341",
+      "email": "uncle_ruckus@gmail.com"
+    }
+  ]
+}
