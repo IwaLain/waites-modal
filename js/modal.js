@@ -12,7 +12,7 @@ closeModal.addEventListener('click', (e) => {
 })
 
 document.addEventListener('click', (e) => {
-    if (e.target.id === 'modal' || e.target.id === 'saveBtn') {
+    if (e.target.id === 'modal') {
         modal.classList.remove('visible')
     }
 })

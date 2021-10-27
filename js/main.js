@@ -7,6 +7,7 @@ const lastName = document.querySelector('#lastName')
 const email = document.querySelector('#email')
 const phone = document.querySelector('#phone')
 const form = document.querySelector('#form')
+const modal = document.querySelector('#modal')
 
 let users = []
 
@@ -30,6 +31,8 @@ form.addEventListener('submit', (e) => {
         email: email.value,
         phone: phone.value
     }
+
+    modal.classList.remove('visible')
 
     ajaxPatch('https://my-json-server.typicode.com/IwaLain/waites-modal/users/1', JSON.stringify(user), (res) => {
         showAlert(res)
