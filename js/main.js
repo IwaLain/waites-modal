@@ -11,7 +11,7 @@ const form = document.querySelector('#form')
 let users = []
 
 document.addEventListener('DOMContentLoaded', () => {
-    ajaxGet('http://localhost:3000/users', (data) => {
+    ajaxGet('https://my-json-server.typicode.com/IwaLain/waites-modal/users', (data) => {
         users = data
 
         firstName.value = users[0].firstName
@@ -31,7 +31,7 @@ form.addEventListener('submit', (e) => {
         phone: phone.value
     }
 
-    ajaxPatch('http://localhost:3000/users/1', JSON.stringify(user), (res) => {
+    ajaxPatch('https://my-json-server.typicode.com/IwaLain/waites-modal/users/1', JSON.stringify(user), (res) => {
         showAlert(res)
     })
 })
