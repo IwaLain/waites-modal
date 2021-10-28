@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="js/jquery-3.6.0.js"></script>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <meta charset="UTF-8">
@@ -9,11 +10,11 @@
     <title>Custom modal</title>
 </head>
 <body>
-    <button id="open-modal" class="btn btn-primary">Open Modal</button>
+    <button id="open-modal" class="btn btn-primary">Edit profile</button>
     <div class="custom_modal__wrap" id="modal">
         <div class="custom_modal__container">
             <div class="custom_modal__header">
-                <h2 class="custom_modal__title">Modal Title</h2>
+                <h2 class="custom_modal__title">Edit profile</h2>
                 <a class="custom_modal__close">&times;</a>
             </div>
             <div class="custom_modal__content">
@@ -43,19 +44,15 @@
                         </div>
                     </div>
                 </form>
-                <button type="submit" form="form" class="btn btn-primary form-btn" id="saveBtn">Save</button>
             </div>
             <div class="custom_modal__footer">
-                <p>footer info</p>
+                <button type="submit" form="form" class="btn btn-primary form-btn" id="saveBtn">Save</button>
+                <button class="btn btn-secondary form-btn" id="cancelBtn">Cancel</button>
             </div>
         </div>
     </div>
     <div class="alert"></div>
 
-    <script src="js/modal.js"></script>
-    <script type="module" src="methods/ajaxGet.js"></script>
-    <script type="module" src="methods/ajaxPatch.js"></script>
-    <script type="module" src="methods/showAlert.js"></script>
-    <script type="module" src="js/main.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

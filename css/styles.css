@@ -41,17 +41,16 @@ body {
   padding: 15px 15px 0 15px;
 }
 
+.custom_modal__wrap .custom_modal__container .custom_modal__header h2 {
+  margin-bottom: 0;
+  line-height: 1;
+}
+
 .custom_modal__wrap .custom_modal__container .custom_modal__header .custom_modal__close {
-  border: 0;
-  background: #dc3545;
-  text-align: center;
   text-decoration: none;
   cursor: pointer;
-  font-size: 28px;
-  padding: 0 11px;
-  color: white;
-  border-radius: 5px;
-  box-shadow: 0 0 3px black;
+  font-size: 32px;
+  color: black;
 }
 
 .custom_modal__wrap .custom_modal__container .custom_modal__content {
@@ -65,12 +64,9 @@ body {
   overflow-y: auto;
 }
 
-.custom_modal__wrap .custom_modal__container .custom_modal__footer p {
-  margin-bottom: 0;
+.custom_modal__wrap .custom_modal__container .custom_modal__footer {
   padding: 15px;
-  background: #343a40;
-  color: white;
-  text-align: end;
+  border-top: 1px solid lightgray;
 }
 
 .alert {
@@ -89,7 +85,7 @@ body {
 
 @media (max-height: 760px) {
 .form-btn {
-  width: 100%;
+  width: 49%;
 }
 }
 

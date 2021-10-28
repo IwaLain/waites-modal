@@ -1,5 +1,4 @@
-{
-  "users": [
+[
     {
       "id": 1,
       "firstName": "Andrey",
@@ -14,5 +13,4 @@
       "phone": "+380953468341",
       "email": "uncle_ruckus@gmail.com"
     }
-  ]
-}
+]
