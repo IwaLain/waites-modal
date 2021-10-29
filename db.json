@@ -6,8 +6,9 @@
       "phone": "+380666223336",
       "email": "iwalain@gmail.com",
       "sex": "Male",
-      "birthday": "29.03.2001",
-      "about": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure iusto pariatur ex consectetur nisi alias labore, fuga assumenda dolorum amet voluptatem perspiciatis vero voluptatibus at eius deserunt non eligendi ratione!"
+      "birthday": "29/03/2001",
+      "address": "Peace, 28",
+      "img": "img/user-icon.png"
     },
     {
       "id": 2,
@@ -16,7 +17,8 @@
       "phone": "+380953468341",
       "email": "uncle_ruckus@gmail.com",
       "sex": "Male",
-      "birthday": "29.03.2001",
-      "about": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure iusto pariatur ex consectetur nisi alias labore, fuga assumenda dolorum amet voluptatem perspiciatis vero voluptatibus at eius deserunt non eligendi ratione!"
+      "birthday": "29/03/2001",
+      "address": "War, 13",
+      "img": "img/user2.jpg"
     }
 ]

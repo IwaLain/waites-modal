@@ -5,14 +5,15 @@ const email = document.querySelector('#email')
 const phone = document.querySelector('#phone')
 const sex = document.querySelector('#sex')
 const birthday = document.querySelector('#birthday')
-const about = document.querySelector('#about')
+const address = document.querySelector('#address')
 
+const profileDescIcon = document.querySelector('#profile-icon')
 const profileDescName = document.querySelector('#profile-desc-name')
 const profileDescEmail = document.querySelector('#profile-desc-email')
 const profileDescPhone = document.querySelector('#profile-desc-phone')
 const profileDescSex = document.querySelector('#profile-desc-sex')
 const profileDescBirthday = document.querySelector('#profile-desc-birthday')
-const profileDescAbout = document.querySelector('#profile-desc-about')
+const profileDescAddress = document.querySelector('#profile-desc-address')
 
 const modal = document.querySelector('#modal')
 const openModal = document.querySelector('#open-modal')
@@ -108,7 +109,6 @@ const showAlert = (type) => {
 const validation = (el) => {
     const name = /^[a-zA-Z]+$/
     const phone = /^[0-9\-\+]{9,15}$/
-    const birthday = /^([0-2][0-9]|(3)[0-1])(\.)(((0)[0-9])|((1)[0-2]))(\.)\d{4}$$/
 
     switch(el.id) {
         case 'firstName':
@@ -136,13 +136,6 @@ const validation = (el) => {
                 validationErrors[2] = ''
             }
             break
-        case 'birthday':
-            if(!birthday.test(el.value)) {
-                validationErrors[3] = 'Birthday format: 29.03.2001'
-            }
-            else {
-                validationErrors[3] = ''
-            }
     }
 }
 
@@ -156,14 +149,15 @@ document.addEventListener('DOMContentLoaded', () => {
         phone.value = users[0].phone,
         sex.value = users[0].sex,
         birthday.value = users[0].birthday
-        about.value = users[0].about
+        address.value = users[0].address
 
+        profileDescIcon.src = users[0].img
         profileDescName.textContent = users[0].firstName + ' ' + users[0].lastName
         profileDescEmail.textContent = users[0].email
         profileDescPhone.textContent = users[0].phone
         profileDescSex.textContent = users[0].sex
         profileDescBirthday.textContent = users[0].birthday
-        profileDescAbout.textContent = users[0].about
+        profileDescAddress.textContent = users[0].address
     })
 })
 
@@ -192,7 +186,7 @@ form.addEventListener('submit', (e) => {
             phone: phone.value,
             sex: sex.value,
             birthday: birthday.value,
-            about: about.value
+            address: address.value
         }
     
         users = users.map((el) => {
@@ -208,9 +202,27 @@ form.addEventListener('submit', (e) => {
             profileDescPhone.textContent = users[0].phone
             profileDescSex.textContent = users[0].sex
             profileDescBirthday.textContent = users[0].birthday
-            profileDescAbout.textContent = users[0].about
+            profileDescAddress.textContent = users[0].address
         })
     } else {
         showAlert('ValidationError')
     }
+})
+
+window.addEventListener('load', function() {
+    document.querySelector('#profile-icon-upload').addEventListener('change', function() {
+        if (this.files && this.files[0]) {
+            var img = document.querySelector('#profile-icon')
+  
+            img.src = URL.createObjectURL(this.files[0])
+
+            /* Requests here */
+        }
+    })
+})
+
+$(() => {
+    $('#datepicker').datepicker({
+        format: 'dd/mm/yyyy'
+    })
 })

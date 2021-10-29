@@ -34,13 +34,34 @@ body > .profile {
   display: flex;
 }
 
-.profile__main-info > img {
+.profile__body .profile__icon-wrapper {
   margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.profile__icon-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile__icon-wrapper img {
+  margin-bottom: 10px;
 }
 
 .profile__icon {
   width: 200px;
-  height: auto;
+  height: 200px;
+}
+
+.profile__icon-upload > input {
+  display: none;
+}
+.profile__icon-upload {
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
 }
 
 .profile__body > .profile__main-info {
@@ -138,7 +159,7 @@ body > .profile {
   flex-direction: column;
   align-items: center;
 }
-.profile__main-info > img {
+.profile__main-info img {
   margin-bottom: 10px;
 }
 }

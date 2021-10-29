@@ -2,6 +2,10 @@
 <html lang="en">
 <head>
     <script src="js/jquery-3.6.0.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <meta charset="UTF-8">
@@ -17,31 +21,37 @@
         </div>
         <div class="profile__body">
             <div class="profile__main-info">
-                <img class="profile__icon" src="img/user-icon.png" alt="img">
+                <div class="profile__icon-wrapper">
+                    <img id="profile-icon" class="profile__icon" src="" alt="img">
+                    <label class="profile__icon-upload">
+                        <input id="profile-icon-upload" type="file">
+                        Change
+                    </label>
+                </div>
                 <table class="profile__description table table-striped">
                     <tbody>
                         <tr>
                             <td>Email</td>
-                            <td id="profile-desc-email">iwalain@gmail.com</td>
+                            <td id="profile-desc-email">???</td>
                         </tr>
                         <tr>
                             <td>Phone</td>
-                            <td id="profile-desc-phone">+380666223336</td>
+                            <td id="profile-desc-phone">???</td>
                         </tr>
                         <tr>
                             <td>Sex</td>
-                            <td id="profile-desc-sex">Male</td>
+                            <td id="profile-desc-sex">???</td>
                         </tr>
                         <tr>
                             <td>Birthday</td>
-                            <td id="profile-desc-birthday">29.03.2001</td>
+                            <td id="profile-desc-birthday">???</td>
+                        </tr>
+                        <tr>
+                            <td>Address</td>
+                            <td id="profile-desc-address">???</td>
                         </tr>
                     </tbody>
                 </table>
-            </div>
-            <div class="profile__about">
-                <h4>About</h4>
-                <p id="profile-desc-about">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae labore fuga saepe, quaerat quibusdam sed officiis ut perspiciatis magni consequuntur similique veritatis eveniet, eligendi impedit. Doloremque autem velit asperiores quas?</p>
             </div>
         </div>
     </div>
@@ -90,14 +100,15 @@
                     </div>
                     <div class="form-group row mb-2">
                         <label for="birthday" class="col-sm-4 col-form-label">Birthday</label>
-                        <div class="col-sm-8">
-                            <input type="text" class="form-control" id="birthday" required>
+                        <div id="datepicker" class="date col-sm-8">
+                                <input type="text" class="form-control" id="birthday" required>
+                                <span class="input-group-append"></span>
                         </div>
                     </div>
                     <div class="form-group row mb-2">
-                        <label for="about" class="col-sm-4 col-form-label">About</label>
+                        <label for="about" class="col-sm-4 col-form-label">Address</label>
                         <div class="col-sm-8">
-                            <textarea class="form-control" id="about" required></textarea>
+                            <input type="text" class="form-control" id="address" required>
                         </div>
                     </div>
                 </form>
