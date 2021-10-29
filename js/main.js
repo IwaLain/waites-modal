@@ -109,6 +109,7 @@ const showAlert = (type) => {
 const validation = (el) => {
     const name = /^[a-zA-Z]+$/
     const phone = /^[0-9\-\+]{9,15}$/
+    const birthday = /^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/\d{4}$/
 
     switch(el.id) {
         case 'firstName':
@@ -136,6 +137,12 @@ const validation = (el) => {
                 validationErrors[2] = ''
             }
             break
+        case 'birthday':
+            if (!birthday.test(el.value)) {
+                validationErrors[3] = 'Date format: 29/03/2001'
+            } else {
+                validationErrors[3] = ''
+            }
     }
 }
 
