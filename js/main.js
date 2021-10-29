@@ -1,11 +1,23 @@
+const form = document.querySelector('#form')
 const firstName = document.querySelector('#firstName')
 const lastName = document.querySelector('#lastName')
 const email = document.querySelector('#email')
 const phone = document.querySelector('#phone')
-const form = document.querySelector('#form')
+const sex = document.querySelector('#sex')
+const birthday = document.querySelector('#birthday')
+const about = document.querySelector('#about')
+
+const profileDescName = document.querySelector('#profile-desc-name')
+const profileDescEmail = document.querySelector('#profile-desc-email')
+const profileDescPhone = document.querySelector('#profile-desc-phone')
+const profileDescSex = document.querySelector('#profile-desc-sex')
+const profileDescBirthday = document.querySelector('#profile-desc-birthday')
+const profileDescAbout = document.querySelector('#profile-desc-about')
+
 const modal = document.querySelector('#modal')
 const openModal = document.querySelector('#open-modal')
 const closeModal = document.querySelector('.custom_modal__close')
+
 const alert = document.querySelector('.alert')
 
 let users = []
@@ -96,6 +108,7 @@ const showAlert = (type) => {
 const validation = (el) => {
     const name = /^[a-zA-Z]+$/
     const phone = /^[0-9\-\+]{9,15}$/
+    const birthday = /^([0-2][0-9]|(3)[0-1])(\.)(((0)[0-9])|((1)[0-2]))(\.)\d{4}$$/
 
     switch(el.id) {
         case 'firstName':
@@ -123,6 +136,13 @@ const validation = (el) => {
                 validationErrors[2] = ''
             }
             break
+        case 'birthday':
+            if(!birthday.test(el.value)) {
+                validationErrors[3] = 'Birthday format: 29.03.2001'
+            }
+            else {
+                validationErrors[3] = ''
+            }
     }
 }
 
@@ -133,7 +153,17 @@ document.addEventListener('DOMContentLoaded', () => {
         firstName.value = users[0].firstName
         lastName.value = users[0].lastName
         email.value = users[0].email
-        phone.value = users[0].phone
+        phone.value = users[0].phone,
+        sex.value = users[0].sex,
+        birthday.value = users[0].birthday
+        about.value = users[0].about
+
+        profileDescName.textContent = users[0].firstName + ' ' + users[0].lastName
+        profileDescEmail.textContent = users[0].email
+        profileDescPhone.textContent = users[0].phone
+        profileDescSex.textContent = users[0].sex
+        profileDescBirthday.textContent = users[0].birthday
+        profileDescAbout.textContent = users[0].about
     })
 })
 
@@ -141,7 +171,8 @@ form.addEventListener('submit', (e) => {
     e.preventDefault()
 
     for (let el of form.elements) {
-        if (el.tagName === 'INPUT') {
+        if (el.tagName === 'INPUT' || el.tagName === 'SELECT') {
+            console.log(el)
             validation(el)
         }
     }
@@ -158,17 +189,26 @@ form.addEventListener('submit', (e) => {
             firstName: firstName.value,
             lastName: lastName.value,
             email: email.value,
-            phone: phone.value
+            phone: phone.value,
+            sex: sex.value,
+            birthday: birthday.value,
+            about: about.value
         }
     
-        const newUsers = users.map((el) => {
+        users = users.map((el) => {
             return el.id === userId ? user : el
         })
     
         modal.classList.remove('visible')
     
-        ajaxPatch('db.json', JSON.stringify(newUsers), (res) => {
+        ajaxPatch('db.json', JSON.stringify(users), (res) => {
             showAlert(res)
+            profileDescName.textContent = users[0].firstName + ' ' + users[0].lastName
+            profileDescEmail.textContent = users[0].email
+            profileDescPhone.textContent = users[0].phone
+            profileDescSex.textContent = users[0].sex
+            profileDescBirthday.textContent = users[0].birthday
+            profileDescAbout.textContent = users[0].about
         })
     } else {
         showAlert('ValidationError')
