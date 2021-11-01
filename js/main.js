@@ -146,6 +146,14 @@ const validation = (el) => {
     }
 }
 
+phone.addEventListener('input', (e) => {
+    const phone = /^[0-9\-\+]{0,15}$/
+
+    if (!phone.test(e.target.value)) {
+        e.target.value = ''
+    }
+})
+
 document.addEventListener('DOMContentLoaded', () => {
     ajaxGet('db.json', (data) => {
         users = data

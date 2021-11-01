@@ -164,7 +164,7 @@ body > .profile {
 }
 }
 
-@media (max-height: 420px), (max-width: 320px) {
+@media (max-height: 740px) {
 .custom_modal__wrap .custom_modal__container .custom_modal__content form {
   max-height: 100px;
 }
